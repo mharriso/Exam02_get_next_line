@@ -14,7 +14,7 @@ static	char			*ft_joinchr(char const *line, char c, size_t len)
 	return (s);
 }
 
-int	get_next_line(char **line)
+int						get_next_line(char **line)
 {
 	char		buffer;
 	int			res;
@@ -28,7 +28,7 @@ int	get_next_line(char **line)
 	while ((res = read(0, &buffer, 1)) > 0 && buffer != '\n')
 	{
 		if (!(tmp = ft_joinchr(*line, buffer, ++len)))
-			return -1;
+			return (-1);
 		free(*line);
 		*line = tmp;
 	}
